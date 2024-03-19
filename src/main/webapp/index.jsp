@@ -6,23 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
-<body>
-<h1>Olá Mundo</h1>
+<style>
+    h1 {
+        display: flex;
+        justify-content: center;
+    }
 
-<form action="ServletLogin" method="post">
-    <label>
-        <div class="mb-3">
-            <input name="nome" type="text" class="form-control" placeholder="Nome">
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+    }
+
+    /*.alert {*/
+    /*    position: relative; !* Adicione esta linha *!*/
+    /*    top: 0; !* Adicione esta linha *!*/
+    /*    width: 100%; !* Adicione esta linha *!*/
+    /*    margin-bottom: 1rem;*/
+    /*}*/
+</style>
+<body>
+<h1>Bem vindo ao curso de JSP</h1>
+
+<div class="center">
+    <form action="ServletLogin" method="post">
+        <div class="alert alert-danger text-center" id="myAlert" role="alert">
+            ${msg}
         </div>
-        <div class="mb-3">
-            <input name="idade" type="text" class="form-control" placeholder="Idade">
+        <div class="card" style="width: 20rem;">
+            <div class="card-body">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="Login" name="login">
+                    <label for="floatingInput">Login</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Senha" name="senha">
+                    <label for="floatingPassword" class="form-label">Senha</label>
+                </div>
+                <div>
+                    <label title="Mostrar Senha">
+                        <input type="checkbox" onclick="seePassword()">
+                    </label>
+                </div>
+                <div class="d-grid gap-2">
+                    <input type="submit" class="btn btn-primary">
+                </div>
+            </div>
         </div>
-        <div class="mb-3">
-            <input type="submit" class="btn btn-primary">
-        </div>
-    </label>
-</form>
+    </form>
+</div>
 </body>
+<script>
+    function seePassword() {
+        var x = document.getElementById("floatingPassword");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+
+    $(document).ready(function () {
+        setTimeout(function () {
+            $('#myAlert').fadeOut('slow');
+        }, 5000);
+    });
+</script>
 </html>
