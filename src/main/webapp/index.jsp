@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+	      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Document</title>
 </head>
 <style>
     h1 {
@@ -31,39 +31,39 @@
     /*}*/
 </style>
 <body>
-<h1>Bem vindo ao curso de JSP</h1>
+<h1>Bem-vindo ao curso de JSP</h1>
 
 <div class="center">
-    <form action="ServletLogin" method="post">
-        <div class="alert alert-danger text-center" id="myAlert" role="alert">
-            ${msg}
-        </div>
-        <div class="card" style="width: 20rem;">
-            <div class="card-body">
-                <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="Login" name="login">
-                    <label for="floatingInput">Login</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Senha" name="senha">
-                    <label for="floatingPassword" class="form-label">Senha</label>
-                </div>
-                <div>
-                    <label title="Mostrar Senha">
-                        <input type="checkbox" onclick="seePassword()">
-                    </label>
-                </div>
-                <div class="d-grid gap-2">
-                    <input type="submit" class="btn btn-primary">
-                </div>
-            </div>
-        </div>
-    </form>
+	<form action="ServletLogin" method="post">
+		<div class="alert alert-danger text-center" id="myAlert" role="alert">
+			${msg}
+		</div>
+		<div class="card" style="width: 20rem;">
+			<div class="card-body">
+				<div class="form-floating mb-3">
+					<input type="email" class="form-control" id="floatingInput" placeholder="Login" name="login">
+					<label for="floatingInput">Login</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="password" class="form-control" id="floatingPassword" placeholder="Senha" name="senha">
+					<label for="floatingPassword" class="form-label">Senha</label>
+				</div>
+				<div>
+					<label title="Mostrar Senha">
+						<input type="checkbox" onclick="seePassword()">
+					</label>
+				</div>
+				<div class="d-grid gap-2">
+					<input type="submit" class="btn btn-primary">
+				</div>
+			</div>
+		</div>
+	</form>
 </div>
 </body>
 <script>
     function seePassword() {
-        var x = document.getElementById("floatingPassword");
+        let x = document.getElementById("floatingPassword");
         if (x.type === "password") {
             x.type = "text";
         } else {
